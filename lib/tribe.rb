@@ -1,10 +1,13 @@
 class Tribe
-  attr_reader :name
+  attr_reader :name, :members
 
-  def initialize(name)
+  def initialize(options)
+    @name = options[:name]
+    @members = options[:members]
+    puts 'E'
   end
 
-  def members
-    []
+  def to_s
+    @name
   end
 end
