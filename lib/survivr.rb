@@ -1,12 +1,13 @@
-require_relative "game"
-require_relative "tribe"
-require_relative "contestant"
-require_relative "jury"
+require_relative 'game'
+require_relative 'tribe'
+require_relative 'contestant'
+require_relative 'jury'
 
-#After your tests pass, uncomment this code below
-#=========================================================
+# After your tests pass, uncomment this code below
+# =========================================================
 # # Create an array of twenty hopefuls to compete on the island of Borneo
-# @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit colt zhalisa farrin muhammed ari rasha gauri)
+# @contestants = %w(carlos walter aparna trinh diego juliana poornima juha sofia julia fernando dena orit
+#   colt zhalisa farrin muhammed ari rasha gauri)
 # @contestants.map!{ |contestant| Contestant.new(contestant) }.shuffle!
 #
 # # Create two new tribes with names
@@ -17,8 +18,7 @@ require_relative "jury"
 # @borneo = Game.new(@coyopa, @hunapu)
 #=========================================================
 
-
-#This is where you will write your code for the three phases
+# This is where you will write your code for the three phases
 def phase_one
 end
 
@@ -27,7 +27,6 @@ end
 
 def phase_three
 end
-
 
 # If all the tests pass, the code below should run the entire simulation!!
 #=========================================================

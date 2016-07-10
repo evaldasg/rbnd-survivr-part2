@@ -1,14 +1,13 @@
 require_relative 'test_helper'
-require_relative "../lib/contestant"
-require_relative "../lib/jury"
+require_relative '../lib/contestant'
+require_relative '../lib/jury'
 
 class TestJury < Minitest::Test
-
   def setup
     @jury_members = %w(carlos walter aparna trinh diego juliana poornima)
-    @jury_members.map!{ |member| Contestant.new(member) }
+    @jury_members.map! { |member| Contestant.new(member) }
     @finalists = %w(orit colt)
-    @finalists.map!{ |member| Contestant.new(member) }
+    @finalists.map! { |member| Contestant.new(member) }
     @jury = Jury.new
   end
 
@@ -50,7 +49,8 @@ class TestJury < Minitest::Test
   # end
   #
   # def test_cast_votes_voting_seems_random
-  #   #not an actual test, but make sure the votes each jury member casts is random. hint: TestContestant has a method that will randomly select an item from an array.
+  #   #not an actual test, but make sure the votes each jury member casts is random.
+  #   hint: TestContestant has a method that will randomly select an item from an array.
   # end
   #
   # def test_report_votes_puts_score_for_each_finalist
