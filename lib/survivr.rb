@@ -1,3 +1,5 @@
+require 'bundler/setup'
+require 'colorizr'
 require_relative 'game'
 require_relative 'tribe'
 require_relative 'contestant'
@@ -20,7 +22,9 @@ require_relative 'jury'
 
 # This is where you will write your code for the three phases
 def phase_one
-  8
+  puts '-= Phase One =-'.red
+  8.times do |i|
+  end
 end
 
 def phase_two

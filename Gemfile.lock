@@ -4,6 +4,7 @@ GEM
     ansi (1.5.0)
     builder (3.2.2)
     coderay (1.1.1)
+    colorizr (0.0.1)
     ffi (1.9.13)
     formatador (0.2.5)
     guard (2.14.0)
@@ -52,6 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colorizr (= 0.0.1)
   guard (= 2.14.0)
   guard-minitest (= 2.4.5)
   minitest (= 5.9.0)

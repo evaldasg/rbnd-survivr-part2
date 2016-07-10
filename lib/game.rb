@@ -1,21 +1,20 @@
 class Game
   attr_reader :tribes
 
-  def initialize(tribe1, tribe2)
-    @tribes = [].push(tribe1, tribe2)
+  def initialize(*tribes)
+    @tribes = tribes
   end
 
   def add_tribe(tribe)
     @tribes << tribe
-    @tribes
   end
 
   def immunity_challenge
-    @tribes.last
+    @tribes.sample
   end
 
   def clear_tribes
-    @tribes = []
+    @tribes.clear
   end
 
   def merge(name)
