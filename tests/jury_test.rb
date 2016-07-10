@@ -50,16 +50,16 @@ class TestJury < Minitest::Test
   #   #not an actual test, but make sure the votes each jury member casts is random.
   #   hint: TestContestant has a method that will randomly select an item from an array.
   # end
-  #
-  # def test_report_votes_puts_score_for_each_finalist
-  #   @jury.members = @jury_members
-  #   final_votes = @jury.cast_votes(@finalists)
-  #   output = capture_io do
-  #     @jury.report_votes(final_votes)
-  #   end
-  #   assert_equal 2, output[0].split("\n").length
-  # end
-  #
+
+  def test_report_votes_puts_score_for_each_finalist
+    @jury.members = @jury_members
+    final_votes = @jury.cast_votes(@finalists)
+    output = capture_io do
+      @jury.report_votes(final_votes)
+    end
+    assert_equal 2, output[0].split("\n").length
+  end
+
   # def test_announce_winner
   #   final_votes = {@finalists.first => 4, @finalists.last => 3}
   #   assert_equal @finalists.first, @jury.announce_winner(final_votes)
