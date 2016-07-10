@@ -27,7 +27,8 @@ def phase_one
     losing_tribe = @borneo.immunity_challenge
     puts "  Immunity challenge has lost '#{losing_tribe}' tribe.".blue
     loser_contestant = losing_tribe.tribal_council
-    puts "  #{loser_contestant}".red + ' has been voted off.'
+    puts "  #{loser_contestant}".red + ' has been voted off. ' +
+      @borneo.tribes.map { |tribe| tribe.details.yellow }.join(' / ')
   end
 end
 

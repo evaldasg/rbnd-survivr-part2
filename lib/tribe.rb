@@ -23,4 +23,8 @@ class Tribe
   def pick_random_member
     @members.sample
   end
+
+  def details
+    "#{name} has #{members.size} members"
+  end
 end
