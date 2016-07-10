@@ -15,10 +15,10 @@ class Game
   end
 
   def clear_tribes
-    []
+    @tribes = []
   end
 
   def merge(name)
-    @tribes.last
+    Tribe.new({ name: name, members: @tribes.map(&:members).flatten })
   end
 end
