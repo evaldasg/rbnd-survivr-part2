@@ -22,4 +22,8 @@ class Jury
     puts '1'
     puts '2'
   end
+
+  def announce_winner(votes)
+    votes.keys[0]
+  end
 end
