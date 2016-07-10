@@ -21,13 +21,13 @@ class TestGame < Minitest::Test
     assert_kind_of Array, @borneo.tribes
   end
 
-  # def test_add_tribe
-  #   contestants = ["person_one", "person_two"]
-  #   contestants.map!{ |contestant| Contestant.new(contestant) }
-  #   tribe_three = Tribe.new({name: "tribe", members: contestants})
-  #   assert_equal 3, @borneo.add_tribe(tribe_three).length
-  # end
-  #
+  def test_add_tribe
+    contestants = ['person_one', 'person_two']
+    contestants.map! { |contestant| Contestant.new(contestant) }
+    tribe_three = Tribe.new({ name: 'tribe', members: contestants })
+    assert_equal 3, @borneo.add_tribe(tribe_three).length
+  end
+
   # def test_immunity_challenge
   #   assert_instance_of Tribe, @borneo.immunity_challenge
   # end

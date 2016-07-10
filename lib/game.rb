@@ -1,8 +1,12 @@
 class Game
-  def initialize(player1, playe2)
+  attr_reader :tribes
+
+  def initialize(tribe1, tribe2)
+    @tribes = [].push(tribe1, tribe2)
   end
 
-  def tribes
-    []
+  def add_tribe(tribe)
+    @tribes << tribe
+    @tribes
   end
 end
