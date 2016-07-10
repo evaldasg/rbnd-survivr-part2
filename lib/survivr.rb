@@ -22,8 +22,12 @@ require_relative 'jury'
 
 # This is where you will write your code for the three phases
 def phase_one
-  puts '-= Phase One =-'.red
-  8.times do |i|
+  puts '-= Phase One =-'.pink
+  8.times do |_i|
+    losing_tribe = @borneo.immunity_challenge
+    puts "  Immunity challenge has lost '#{losing_tribe}' tribe.".blue
+    loser_contestant = losing_tribe.tribal_council
+    puts "  #{loser_contestant}".red + ' has been voted off.'
   end
 end
 
@@ -37,7 +41,7 @@ end
 
 # If all the tests pass, the code below should run the entire simulation!!
 #=========================================================
-# phase_one #8 eliminations
+phase_one # 8 eliminations
 @merge_tribe = @borneo.merge('Cello') # After 8 eliminations, merge the two tribes together
 # phase_two #3 more eliminations
 @jury = Jury.new

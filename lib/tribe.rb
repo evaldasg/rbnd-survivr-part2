@@ -1,10 +1,13 @@
+require 'bundler/setup'
+require 'colorizr'
+
 class Tribe
   attr_reader :name, :members
 
   def initialize(options)
     @name = options[:name]
     @members = options[:members]
-    puts 'E'
+    puts name.yellow + " has been created with members: [#{members.map(&:name).join(', ')}].".green
   end
 
   def to_s
@@ -12,6 +15,12 @@ class Tribe
   end
 
   def tribal_council(options = {})
-    @members.select { |member| member != options[:immune] }.delete_at(0)
+    voted_off = pick_random_member
+    voted_off = pick_random_member while voted_off == options[:immune]
+    @members.delete(voted_off)
+  end
+
+  def pick_random_member
+    @members.sample
   end
 end
