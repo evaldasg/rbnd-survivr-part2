@@ -13,4 +13,12 @@ class Game
   def immunity_challenge
     @tribes.last
   end
+
+  def clear_tribes
+    []
+  end
+
+  def merge(name)
+    @tribes.last
+  end
 end

@@ -32,23 +32,24 @@ class TestGame < Minitest::Test
     assert_instance_of Tribe, @borneo.immunity_challenge
   end
 
-  # def test_clear_tribes
-  #   assert_empty @borneo.clear_tribes
-  # end
-  #
-  # def test_merge_returns_new_tribe
-  #   assert_instance_of Tribe, @borneo.merge("combined_tribe")
-  # end
-  #
-  # def test_merge_includes_one_of_first_tribe
-  #   included = []
-  #   new_tribe = @borneo.merge("combined_tribe")
-  #   @coyopa.members.each do |contestant|
-  #     new_tribe.members.include?(contestant) ? included << true : included << false
-  #   end
-  #   assert included.include?(true)
-  # end
-  #
+  def test_clear_tribes
+    assert_empty @borneo.clear_tribes
+  end
+
+  def test_merge_returns_new_tribe
+    assert_instance_of Tribe, @borneo.merge('combined_tribe')
+  end
+
+  def test_merge_includes_one_of_first_tribe
+    included = []
+    new_tribe = @borneo.merge('combined_tribe')
+    @coyopa.members.each do |contestant|
+      # rubocop:disable all
+      new_tribe.members.include?(contestant) ? included << true : included << false
+    end
+    assert included.include?(true)
+  end
+
   # def test_merge_includes_one_of_second_tribe
   #   included = []
   #   new_tribe = @borneo.merge("combined_tribe")

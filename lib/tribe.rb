@@ -3,4 +3,8 @@ class Tribe
 
   def initialize(name)
   end
+
+  def members
+    []
+  end
 end
