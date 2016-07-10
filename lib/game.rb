@@ -9,4 +9,8 @@ class Game
     @tribes << tribe
     @tribes
   end
+
+  def immunity_challenge
+    @tribes.last
+  end
 end

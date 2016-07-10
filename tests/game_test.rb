@@ -28,10 +28,10 @@ class TestGame < Minitest::Test
     assert_equal 3, @borneo.add_tribe(tribe_three).length
   end
 
-  # def test_immunity_challenge
-  #   assert_instance_of Tribe, @borneo.immunity_challenge
-  # end
-  #
+  def test_immunity_challenge
+    assert_instance_of Tribe, @borneo.immunity_challenge
+  end
+
   # def test_clear_tribes
   #   assert_empty @borneo.clear_tribes
   # end
