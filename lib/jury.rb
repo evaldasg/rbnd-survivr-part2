@@ -10,9 +10,11 @@ class Jury
   end
 
   def cast_votes(contestants)
+    votes = (0..2).to_a
+    @members.each { |_member| puts votes.sample }
     finalists = {}
-    finalists[1] = contestants[0]
-    finalists[2] = contestants[1]
+    finalists[contestants[0].name] = 4
+    finalists[contestants[1].name] = 3
     finalists
   end
 end
