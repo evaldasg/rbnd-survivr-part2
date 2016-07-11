@@ -7,7 +7,7 @@ class Tribe
   def initialize(options)
     @name = options[:name]
     @members = options[:members]
-    puts name.yellow + " has been created with members: [#{members.map(&:name).join(', ')}].".green
+    puts name.yellow + " tribe has been created with members: [#{members.map(&:name).join(', ')}].".green
   end
 
   def to_s

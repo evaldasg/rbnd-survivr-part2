@@ -21,15 +21,19 @@ require_relative 'jury'
 #=========================================================
 
 # This is where you will write your code for the three phases
-def phase_one
+def phase_one # rubocop:disable all
+  voted_off_contestants = []
+  puts
   puts '-= Phase One =-'.pink
   8.times do |_i|
     losing_tribe = @borneo.immunity_challenge
     puts "  Immunity challenge has lost '#{losing_tribe}' tribe.".blue
-    loser_contestant = losing_tribe.tribal_council
-    puts "  #{loser_contestant}".red + ' has been voted off. ' +
-      @borneo.tribes.map { |tribe| tribe.details.yellow }.join(' / ')
+    voted_off_contestants << loser_contestant = losing_tribe.tribal_council
+    puts "  #{loser_contestant}".red + ' has been voted off. '
   end
+  puts '  Summary: ' + @borneo.tribes.map { |tribe| tribe.details.yellow }.join(' / ')
+  puts
+  voted_off_contestants.size
 end
 
 def phase_two
