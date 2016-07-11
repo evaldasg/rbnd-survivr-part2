@@ -36,8 +36,19 @@ def phase_one # rubocop:disable all
   voted_off_contestants.size
 end
 
-def phase_two
-  3
+def phase_two # rubocop:disable all
+  voted_off_contestants = []
+  puts
+  puts '-= Phase Two =-'.pink
+  3.times do |_i|
+    immune = @borneo.individual_immunity_challenge
+    puts '  Immunity has '.blue + immune.to_s.red
+    voted_off_contestants << loser_contestant = @borneo.tribes.first.tribal_council(immune: immune)
+    puts "  #{loser_contestant}".red + ' has been voted off. '
+  end
+  puts '  Summary: ' + @borneo.tribes.map { |tribe| tribe.details.yellow }.join(' / ')
+  puts
+  voted_off_contestants.size
 end
 
 def phase_three
@@ -51,7 +62,7 @@ phase_one # 8 eliminations
 phase_two # 3 more eliminations
 @jury = Jury.new
 # phase_three #7 elminiations become jury members
-finalists = @merge_tribe.members # set finalists
-vote_results = @jury.cast_votes(finalists) # Jury members report votes
-@jury.report_votes(vote_results) # Jury announces their votes
-@jury.announce_winner(vote_results) # Jury announces final winner
+# finalists = @merge_tribe.members # set finalists
+# vote_results = @jury.cast_votes(finalists) # Jury members report votes
+# @jury.report_votes(vote_results) # Jury announces their votes
+# @jury.announce_winner(vote_results) # Jury announces final winner
