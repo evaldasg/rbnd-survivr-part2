@@ -48,7 +48,7 @@ end
 #=========================================================
 phase_one # 8 eliminations
 @merge_tribe = @borneo.merge('Cello') # After 8 eliminations, merge the two tribes together
-# phase_two #3 more eliminations
+phase_two # 3 more eliminations
 @jury = Jury.new
 # phase_three #7 elminiations become jury members
 finalists = @merge_tribe.members # set finalists
