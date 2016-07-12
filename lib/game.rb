@@ -1,8 +1,9 @@
 class Game
   attr_reader :tribes
 
-  def initialize(*tribes)
-    @tribes = tribes
+  # Game starts with two tribes!
+  def initialize(tribe1, tribe2)
+    @tribes = [tribe1, tribe2]
   end
 
   def add_tribe(tribe)

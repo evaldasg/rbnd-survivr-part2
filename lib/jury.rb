@@ -13,11 +13,13 @@ class Jury
   end
 
   def cast_votes(finalists)
-    @members.each_with_object(Hash.new(0)) do |member, votes|
+    votes = Hash[finalists.map { |finalist| [finalist.to_s, 0] }]
+    @members.each do |member|
       vote = finalists.sample
       votes[vote.to_s] += 1
       puts "  #{member.to_s.pink} has voted for #{vote.to_s.green}"
     end
+    votes
   end
 
   def report_votes(votes)

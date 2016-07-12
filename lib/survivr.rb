@@ -49,7 +49,7 @@ def phase_two
   3.times do |_i|
     immune = @borneo.individual_immunity_challenge
     puts '  Immunity has '.blue + immune.to_s.red
-    voted_off_contestants << loser_contestant = @borneo.tribes.first.tribal_council(immune: immune)
+    voted_off_contestants << loser_contestant = @merge_tribe.tribal_council(immune: immune)
     puts "  #{loser_contestant}".red + ' has been voted off.'
   end
   footer
